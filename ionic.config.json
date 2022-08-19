@@ -1,0 +1,7 @@
+{
+  "name": "kafftejl",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
