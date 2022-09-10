@@ -1,9 +1,5 @@
 import {
   IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
   IonCol,
   IonContent,
   IonGrid,
@@ -26,7 +22,8 @@ const Tab1: React.FC = () => {
   useIonViewWillEnter(() => {
     fetch(cocktailsURL)
       .then((res) => res.json())
-      .then((data) => setCocktails(data.drinks));
+      .then((data) => setCocktails(data.drinks))
+      .catch((e) => console.error(e));
   });
 
   if (!cocktails) return null;
@@ -47,7 +44,10 @@ const Tab1: React.FC = () => {
           <IonRow>
             {cocktails.map((cocktail) => (
               <IonCol key={cocktail.idDrink} size="6">
-                <IonCard key={cocktail.idDrink}>
+                <IonCard
+                  key={cocktail.idDrink}
+                  routerLink={`/cocktails/${cocktail.idDrink}`}
+                >
                   <IonImg src={cocktail.strDrinkThumb}></IonImg>
                 </IonCard>
               </IonCol>

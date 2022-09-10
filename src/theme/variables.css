@@ -234,3 +234,21 @@ http://ionicframework.com/docs/theming/ */
     --ion-card-background: #1e1e1e;
   }
 }
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ion-item {
+  line-height: 150%;
+}
+
+.cocktail-img {
+  max-height: 250px;
+  object-fit: cover;
+}
+
+.bold {
+  font-weight: 700;
+}
